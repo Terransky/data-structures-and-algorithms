@@ -1,3 +1,8 @@
+# Table of Contents
+* [Challenge 1]()
+* [Challenge 2]()
+* [Challenge 3](https://github.com/Terransky/data-structures-and-algorithms1/blob/array-binary-search/python/code_challenges/array_binary_search/README.md)
+
 # Data Structures and Algorithms
 
 ## Language: `Python`
