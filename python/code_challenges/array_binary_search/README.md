@@ -3,7 +3,7 @@ Define a function that accepts an assorted list and key search term as arguments
 index of the matching value or -1 if not found
 
 ## Whiteboard Process
-![Whiteboard](https://raw.githubusercontent.com/Terransky/data-structures-and-algorithms1/array-binary-search/python/code_challenges/array-binary-search/binary_search.png)
+![Whiteboard](https://raw.githubusercontent.com/Terransky/data-structures-and-algorithms2/array-binary-search/python/code_challenges/array_binary_search/binary-search.png)
 
 ## Approach & Efficiency
 We created a function to take in a sorted array and key argument to run a binary search on it because
