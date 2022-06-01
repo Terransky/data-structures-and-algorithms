@@ -16,15 +16,16 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert_beginning(self, value):
-        value.next = self.head
-        self.head = value
+    def insert_beginning(self, node):
+        node.next = self.head
+        self.head = node
 
     def includes(self, value):
         current = self.head
 
         while current is not None:
             if current.data == value:
+                print(f"Found it: {current.data}")
                 return True
             current.head = current.next
 
@@ -35,7 +36,7 @@ class LinkedList:
         while current is not None:
             nodes.append(f"{ {current.data} }")
             current = current.next
-        nodes.append(" -> NULL")
+        nodes.append("NULL")
         return " -> ".join(nodes)
 
     #  formatted as "{ a } -> { b } -> { c } -> NULL"
@@ -47,6 +48,8 @@ class TargetError:
 
 
 if __name__ == "__main__":
+
+    l_list = LinkedList()
 
     node1 = Node("1")
     node2 = Node("2")
@@ -64,9 +67,17 @@ if __name__ == "__main__":
     print(node2.next.data)
     print(node3.next.data)
     print(node4.next.data)
+    print()
 
+    l_list.head = node1
+    print(l_list.head.data)
 
+    node0 = Node("0")
+    l_list.insert_beginning(node0)
+    print(l_list.head.data)
 
+    #  .includes() runs infinite
 
+    print(l_list.to_string())
 
 
