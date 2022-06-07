@@ -1,24 +1,50 @@
 
 class Node:
-    """docstring"""
+    """initializes an object with keys for value, next, and previous node"""
 
     def __init__(self, data):
         self.data = data
         self.next = None
+        self.prev = None
 
     # def __repr__(self):
-    #     return self.data
+    #     return f"{self.data}"
 
 
 class LinkedList:
-    """Put docstring here"""
+    """maintains the linked list methods to maneuver nodes"""
 
     def __init__(self):
         self.head = None
 
-    def insert_beginning(self, node):
+    def insert(self, node):
         node.next = self.head
         self.head = node
+
+    def append(self, value):
+        """appends value to end of linked list"""
+        node = Node(value)
+
+        if self.head is None:
+            self.head = node
+
+        else:
+            current = self.head
+            while current:
+                current = current.next
+                print("test", current.next)
+                if current.next is None:
+                    current.next = node
+                    break
+
+
+
+
+    def insert_before(self, value, new_value):
+        pass
+
+    def insert_after(self, value, new_value):
+        pass
 
     def includes(self, value):
         current = self.head
@@ -40,7 +66,6 @@ class LinkedList:
         return " -> ".join(nodes)
 
     #  formatted as "{ a } -> { b } -> { c } -> NULL"
-
 
 
 class TargetError:
@@ -73,11 +98,17 @@ if __name__ == "__main__":
     print(l_list.head.data)
 
     node0 = Node("0")
-    l_list.insert_beginning(node0)
+    l_list.insert(node0)
     print(l_list.head.data)
+
+    l_list.append('8')
+
+    print(l_list.to_string())
+
+
 
     #  .includes() runs infinite
 
-    print(l_list.to_string())
+
 
 
