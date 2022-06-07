@@ -1,8 +1,8 @@
+
 import pytest
-from data_structures.linked_list import LinkedList, TargetError
+from linked_list import LinkedList, TargetError
 
 
-@pytest.mark.skip("TODO")
 def test_append():
     linked_list = LinkedList()
 
