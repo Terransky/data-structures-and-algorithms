@@ -17,7 +17,8 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert(self, node):
+    def insert(self, value):
+        node = Node(value)
         node.next = self.head
         self.head = node
 
@@ -32,13 +33,9 @@ class LinkedList:
             current = self.head
             while current:
                 current = current.next
-                print("test", current.next)
                 if current.next is None:
                     current.next = node
                     break
-
-
-
 
     def insert_before(self, value, new_value):
         pass
@@ -56,6 +53,7 @@ class LinkedList:
             current.head = current.next
 
     def to_string(self):
+        """method stores node values in list, joins them, and strips quotes from curlies"""
         current = self.head
         nodes = []
 
@@ -63,9 +61,22 @@ class LinkedList:
             nodes.append(f"{ {current.data} }")
             current = current.next
         nodes.append("NULL")
-        return " -> ".join(nodes)
+        str = " -> ".join(nodes)
+        str = str.replace("'", ' ')  # strips quotes, preserves spacing in brackets
+        return str
 
-    #  formatted as "{ a } -> { b } -> { c } -> NULL"
+
+    def __str__(self):
+        """dunder str concatenates node values and strips quotes from curlies """
+        current = self.head
+        str = ""
+
+        while current is not None:
+            str += f"{ { current.data } } -> "
+            current = current.next
+        str = str.replace("'", ' ')  # strips quotes, preserves spacing in brackets
+        return str + "NULL"
+        #  formatted as "{ a } -> { b } -> { c } -> NULL"
 
 
 class TargetError:
@@ -76,39 +87,42 @@ if __name__ == "__main__":
 
     l_list = LinkedList()
 
-    node1 = Node("1")
-    node2 = Node("2")
-    node3 = Node("3")
-    node4 = Node("4")
-    node5 = Node("5")
+    # node1 = Node("1")
+    # node2 = Node("2")
+    # node3 = Node("3")
+    # node4 = Node("4")
+    # node5 = Node("5")
+    #
+    # node1.next = node2
+    # node2.next = node3
+    # node3.next = node4
+    # node4.next = node5
+    #
+    # print(node1.data)
+    # print(node1.next.data)
+    # print(node2.next.data)
+    # print(node3.next.data)
+    # print(node4.next.data)
+    # print()
+    #
+    # l_list.head = node1
+    # print(l_list.head.data)
+    #
+    # node0 = Node("0")
+    # l_list.insert(node0)
+    # print(l_list.head.data)
+    #
+    # l_list.append('8')
+    #
+    # print(l_list.to_string())
 
-    node1.next = node2
-    node2.next = node3
-    node3.next = node4
-    node4.next = node5
+    l_list.insert("apple")
 
-    print(node1.data)
-    print(node1.next.data)
-    print(node2.next.data)
-    print(node3.next.data)
-    print(node4.next.data)
-    print()
+    l_list.insert("banana")
 
-    l_list.head = node1
-    print(l_list.head.data)
-
-    node0 = Node("0")
-    l_list.insert(node0)
-    print(l_list.head.data)
-
-    l_list.append('8')
+    l_list.append("cucumber")
 
     print(l_list.to_string())
-
-
+    print(str(l_list))
 
     #  .includes() runs infinite
-
-
-
-
