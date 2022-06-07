@@ -1,7 +1,7 @@
 # Table of Contents
 * [Challenge 1]()
 * [Challenge 2]()
-* [Challenge 3](https://github.com/Terransky/data-structures-and-algorithms2/blob/array-binary-search/python/code_challenges/array_binary_search/README.md
+* [Challenge 3](https://github.com/Terransky/data-structures-and-algorithms2/blob/array-binary-search/python/code_challenges/array_binary_search/README.md)
 * [Challenge 4]()
 * [Challenge 5]()
 * [Challenge 6](https://github.com/Terransky/data-structures-and-algorithms/edit/main/python/code_challenges/Challenge06/README.md)
