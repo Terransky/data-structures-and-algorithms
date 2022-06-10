@@ -5,10 +5,6 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-        self.prev = None
-
-    # def __repr__(self):
-    #     return f"{self.data}"
 
 
 class LinkedList:
@@ -16,6 +12,7 @@ class LinkedList:
 
     def __init__(self):
         self.head = None
+
 
     def insert(self, value):
         node = Node(value)
@@ -38,19 +35,54 @@ class LinkedList:
                     break
 
     def insert_before(self, value, new_value):
-        pass
+        """"searches value and inserts new node with new value before found value's node"""
+        new_node = Node(new_value)
+
+        if self.head is None:
+            self.head = new_node
+
+        else:
+            prev = None
+            current = self.head
+
+            while True:
+
+                if current.data is value:  # once the value of the node matches search value
+                    prev.next = new_node  # sets next of previous node to new node (inserts into link)
+                    new_node.next = current  # then sets that new node's next to the node ahead
+                    break
+
+                prev = current
+                current = current.next  # maintains one node ahead of prev
 
     def insert_after(self, value, new_value):
-        pass
+        """"searches value and inserts new node with new value after found value's node"""
+        new_node = Node(new_value)
+
+        if self.head is None:
+            self.head = new_node
+
+        else:
+            current = self.head
+
+            while True:
+
+                if current.data is value:  # once the value of the node matches search value
+                    new_node.next = current.next  # connects next node to new node
+                    current.next = new_node  # connects new node to the previous node
+
+                    break
+                current = current.next  # traverses linked list
 
     def includes(self, value):
         current = self.head
 
-        while current is not None:
+        while current:
+            previous = current
             if current.data == value:
                 print(f"Found it: {current.data}")
                 return True
-            current.head = current.next
+            current = current.next
 
     def to_string(self):
         """method stores node values in list, joins them, and strips quotes from curlies"""
@@ -64,7 +96,6 @@ class LinkedList:
         str = " -> ".join(nodes)
         str = str.replace("'", ' ')  # strips quotes, preserves spacing in brackets
         return str
-
 
     def __str__(self):
         """dunder str concatenates node values and strips quotes from curlies """
@@ -120,9 +151,13 @@ if __name__ == "__main__":
 
     l_list.insert("banana")
 
-    l_list.append("cucumber")
+    # l_list.append("cucumber")
 
     print(l_list.to_string())
+    print(str(l_list))
+
+    l_list.insert_before("banana", "cucumber")
+
     print(str(l_list))
 
     #  .includes() runs infinite
