@@ -69,7 +69,7 @@ class LinkedList:
 
                 if current.data is value:  # once the value of the node matches search value
                     new_node.next = current.next  # connects next node to new node
-                    current = new_node  # inserts new node into link
+                    current.next = new_node  # connects new node to the previous node
 
                     break
                 current = current.next  # traverses linked list
