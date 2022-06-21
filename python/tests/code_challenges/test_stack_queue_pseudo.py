@@ -1,5 +1,5 @@
 import pytest
-from code_challenges.stack_queue_pseudo import PseudoQueue
+from python.code_challenges.stack_queue_pseudo import PseudoQueue
 
 
 def test_exists():
