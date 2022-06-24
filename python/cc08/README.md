@@ -4,7 +4,7 @@
 Traverse through 2 lists and zipper merge them by alternately linking their node.nexts
 
 ## Whiteboard Process
-![Whiteboard](cc08.jpg)
+![Whiteboard](https://github.com/Terransky/data-structures-and-algorithms/blob/main/python/cc08/cc08.png)
 
 ## Approach & Efficiency
 
