@@ -61,7 +61,8 @@ class Queue:
         try:
             while self.front:
                 dq_node_value = self.front.value  # assign node value to return it
-                self.front.next = self.front  # sets next node as self.front
+                temp = self.front.next  # temporarily store node
+                self.front = temp  # sets next node as self.front
                 return dq_node_value
 
         except:
@@ -100,9 +101,15 @@ if __name__ == "__main__":
     print(stack.top.next.next.value)
 
     stack.push(4)
+    stack.push(5)
     print(stack.top.value)
 
     print(stack.pop())
+    print(stack.pop())
+    print(stack.pop())
+    print(stack.pop())
+    print(stack.pop())
+
     print(stack.peek())
     print(stack.is_empty())
 
@@ -113,8 +120,13 @@ if __name__ == "__main__":
     print(queue.front.next.next.value)
 
     queue.enqueue('d')
+
     print(queue.front.next.next.next.value)
 
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
     print(queue.dequeue())
     print(queue.peek())
     print(queue.is_empty())
