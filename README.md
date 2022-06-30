@@ -7,6 +7,10 @@
 * [Challenge 6](https://github.com/Terransky/data-structures-and-algorithms/blob/main/python/README.md)
 * [Challenge 7](https://github.com/Terransky/data-structures-and-algorithms/blob/main/python/cc08/README.md)
 * [Challenge 8](https://github.com/Terransky/data-structures-and-algorithms/blob/main/python/cc08/README.md)
+* [Challenge 9]()
+* [Challenge 10]()
+* [Challenge 11]()
+* [Challenge 12](https://github.com/Terransky/data-structures-and-algorithms/blob/main/python/code_challenges/cc12/README.md)
 
 # Data Structures and Algorithms
 
