@@ -29,6 +29,9 @@
 
 def insertion_sort(int_list):
 
+    if isinstance(int_list, list) is not True:
+        return "Please input a list"
+
     for i in range(1, len(int_list)):
 
         j = i - 1
@@ -43,16 +46,16 @@ def insertion_sort(int_list):
     return int_list
 
 
-if __name__ == '__main__':
-
-    unsorted_list = [5, 4, 8, 9, 3, 2, 1]
-    example1 = [8,4,23,42,16,15]
-    reverse = [20,18,12,8,5,-2]
-    uniques = [5,12,7,5,5,7]
-    nearly = [2,3,5,7,13,11]
-
-    print(insertion_sort(unsorted_list))
-    print(insertion_sort(example1))
-    print(insertion_sort(reverse))
-    print(insertion_sort(uniques))
-    print(insertion_sort(nearly))
+# if __name__ == '__main__':
+#
+#     unsorted_list = [5, 4, 8, 9, 3, 2, 1]
+#     example1 = [8,4,23,42,16,15]
+#     reverse = [20,18,12,8,5,-2]
+#     uniques = [5,12,7,5,5,7]
+#     nearly = [2,3,5,7,13,11]
+#
+#     print(insertion_sort(unsorted_list))
+#     print(insertion_sort(example1))
+#     print(insertion_sort(reverse))
+#     print(insertion_sort(uniques))
+#     print(insertion_sort(nearly))
